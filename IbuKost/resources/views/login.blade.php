@@ -13,8 +13,8 @@
     <div class="login-container">
         <!-- Logo -->
         <div class="login-header">
-            <img src="{{ asset('images/logo.png') }}" alt="IbuKost Logo">
-            <h1>IbuKost</h1>
+            <img src="{{ asset('images/logo.jpg') }}" alt="IbuKost Logo">
+            
         </div>
 
         <!-- Form Login -->
@@ -29,6 +29,7 @@
                 </div>
                 <button type="submit" class="login-button">LOGIN</button>
             </form>
+            <p class="login-link">Belum punya akun?  <a href="{{ route('register') }}">DAFTAR</a></p>
         </div>
     </div>
 
