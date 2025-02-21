@@ -8,13 +8,13 @@ use App\Http\Controllers\AuthController;
 //     return view('welcome');
 // });
 
-Route::controller(AuthController::class)->functions([
-    Route::get('/register', 'showRegister')->name('register'),
-    Route::get('/login', 'showLogin')->name('login'),
-    Route::post('/register', 'register'),
-    Route::post('/login', 'login'),
-    Route::get('/logout', 'logout')->name('logout'),
-]);
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/register', 'showRegister')->name('register');
+    Route::get('/login', 'showLogin')->name('login');
+    Route::post('/register', 'register');
+    Route::post('/login', 'login');
+    Route::get('/logout', 'logout')->name('logout');
+});
 
 Route::get('register', function () {
     return view('register');
@@ -25,6 +25,11 @@ Route::get('login', function () {
 Route::get('dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('/kamar', function () {
+    return view('kamar');
+});
+
 Route::get('landing_page', function () {
     return view('landing_page');
 });
