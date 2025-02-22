@@ -46,6 +46,9 @@
             <img src="{{ asset('images/kost.webp') }}" alt="Kost 2">
             <img src="{{ asset('images/kamar.webp') }}" alt="Kamar Kost">
             <img src="{{ asset('images/wc.jpg') }}" alt="Kamar Mandi">
+            <img src="{{ asset('images/wc.jpg') }}" alt="Kamar Mandi">
+            <img src="{{ asset('images/wc.jpg') }}" alt="Kamar Mandi">
+         
     </div>
 
 

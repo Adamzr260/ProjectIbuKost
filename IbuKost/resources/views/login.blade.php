@@ -11,15 +11,12 @@
 <body>
 
     <div class="login-container">
-        <!-- Logo -->
         <div class="login-header">
             <img src="{{ asset('images/logo.jpg') }}" alt="IbuKost Logo">
-            
         </div>
 
-        <!-- Form Login -->
         <div class="login-box">
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('dashboard') }}" method="GET">
                 @csrf
                 <div class="input-group">
                     <input type="text" name="username" placeholder="Username" required>
@@ -27,9 +24,9 @@
                 <div class="input-group">
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <button type="submit" class="login-button"><a href="{{ route('dashboard') }}">MASUK</a></button>
+                <button type="submit" class="login-button">MASUK</a></button>
             </form>
-            <p class="login-link">Belum punya akun?  <a href="{{ route('login') }}">DAFTAR</a></p>
+            <p class="login-link">Belum punya akun? <a href="{{ route('register') }}">DAFTAR</a></p>
         </div>
     </div>
 
