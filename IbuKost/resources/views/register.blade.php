@@ -4,7 +4,7 @@
 <div class="register-container">
     <div class="register-box">
         <div class="logo-container">
-            <img src="{{ asset('images/logo.png') }}" alt="IbuKost Logo">
+            <img src="{{ asset('images/logo.jpg') }}" alt="IbuKost Logo">
         </div>
         <h2>Daftar</h2>
         <form method="POST" action="{{ route('register') }}">

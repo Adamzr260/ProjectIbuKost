@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -37,3 +38,4 @@ Route::get('/kamar', function () {
 Route::get('landing', function () {
     return view('landing');
 });
+

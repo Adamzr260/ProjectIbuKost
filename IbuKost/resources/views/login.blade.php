@@ -29,7 +29,7 @@
                 </div>
                 <button type="submit" class="login-button">LOGIN</button>
             </form>
-            <p class="login-link">Belum punya akun?  <a href="{{ route('register') }}">DAFTAR</a></p>
+            <p class="login-link">Belum punya akun?  <a href="{{ route('login') }}">DAFTAR</a></p>
         </div>
     </div>
 

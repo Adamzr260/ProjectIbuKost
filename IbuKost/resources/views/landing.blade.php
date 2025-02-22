@@ -56,7 +56,7 @@
             <h2>Masuk ke IbuKost</h2>
             <p>Saya ingin masuk sebagai</p>
             <button class="role-btn" onclick="redirectToLogin()">Penyewa Kost</button>
-            <button class="role-btn">Pemilik Kost</button>
+            <button class="role-btn" onclick="redirectToLogin()">Pemilik Kost</button>
         </div>
     </div>
 

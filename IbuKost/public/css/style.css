@@ -47,14 +47,16 @@ header {
 }
 
 .btn-login {
-    background-color: #b19e86;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    border: none;
-}
+        background-color: #6d4c41; /* Warna lebih gelap */
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .button:hover {
+        background-color: #5a3a31;
+    }
 
 .btn-login:hover {
     background-color: #a18d75;
@@ -67,6 +69,9 @@ header {
     border-radius: 35px;
     margin-bottom: 10px;
     font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 
@@ -76,13 +81,16 @@ header {
     gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .facilities span {
     background: white;
-    padding: 8px 15px;
+    padding: 10px 15px;
     border-radius: 20px;
     font-weight: bold;
+    min-width: 160px;
 }
 
 /* Gallery */
@@ -139,6 +147,24 @@ header {
 
 .role-btn:hover {
     background: #ddd;
+}
+
+.maps-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.maps-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.maps-link:hover {
+    text-decoration: underline;
 }
 
 /* CSS LOGIN */
@@ -292,3 +318,14 @@ h2 {
     text-decoration: none;
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .badge {
+        min-width: 120px;
+        font-size: 14px;
+    }
+}
+
