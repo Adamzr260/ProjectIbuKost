@@ -18,7 +18,7 @@
             <div class="input-group">
                 <input type="password" name="password_confirmation" placeholder="Masukkan ulang password" required>
             </div>
-            <button type="submit" class="register-button">DAFTAR</button>
+            <button type="submit" class="register-button"><a href="{{ route('dashboard') }}">DAFTAR</a></button>
         </form>
         <p class="login-link">Sudah punya akun? <a href="{{ route('login') }}">Login</a></p>
     </div>

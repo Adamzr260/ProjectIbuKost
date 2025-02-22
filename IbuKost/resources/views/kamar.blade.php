@@ -34,16 +34,15 @@
                 <i class='bx bx-user-circle'></i>
             </header>
 
-            <section class="info">
-                <!-- Galeri Foto -->
-                <h2>Galeri Kost ></h2>
-                <div class="gallery-container">
-                    <div class="gallery">
-                        <img src="{{ asset('images/kost1.jpg') }}" alt="Kost 1">
-                        <img src="{{ asset('images/kost2.jpg') }}" alt="Kost 2">
-                        <img src="{{ asset('images/kost3.jpg') }}" alt="Kost 3">
-                        <img src="{{ asset('images/kost4.jpg') }}" alt="Kost 4">
-                    </div>
+        <!-- Section utama untuk daftar kamar -->
+        <section class="daftar-kamar">
+                <div class="kamar-container">
+                    <!-- Misalnya kita tampilkan 20 kotak -->
+                    @for($i = 1; $i <= 20; $i++)
+                        <div class="kamar-box">
+                            <span>nomor kamar</span>
+                        </div>
+                    @endfor
                 </div>
             </section>
         </main>

@@ -20,7 +20,7 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::get('register', function () {
     return view('register');
-});
+})->name('register');
 
 // Route::get('login', function () {
 //     return view('login');
@@ -37,5 +37,5 @@ Route::get('/kamar', function () {
 
 Route::get('landing', function () {
     return view('landing');
-});
+})->name('landing');
 

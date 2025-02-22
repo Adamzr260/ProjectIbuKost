@@ -27,7 +27,7 @@
                 <div class="input-group">
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <button type="submit" class="login-button">LOGIN</button>
+                <button type="submit" class="login-button"><a href="{{ route('dashboard') }}">MASUK</a></button>
             </form>
             <p class="login-link">Belum punya akun?  <a href="{{ route('login') }}">DAFTAR</a></p>
         </div>

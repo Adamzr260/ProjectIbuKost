@@ -88,7 +88,6 @@ header h1 {
     padding-left: 10px; /* beri jarak dari ikon */
 }
 
-
 .profile-icon {
     font-size: 24px;
 }
@@ -98,27 +97,36 @@ header h1 {
     margin-bottom: 20px;
 }
 
-.box {
+/* Bagian daftar-kamar (kotak besar hitam di sekitar) */
+.daftar-kamar {
+    /* Kamu bisa atur margin/padding sesuai selera */
+    margin-top: 20px;
+}
+
+.kamar-container {
     width: 100%;
-    height: 100px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.box.small {
-    height: 50px;
-}
-
-.box.small-grid {
+    border: 2px solid #000; /* Garis hitam di sekitar */
+    padding: 20px;          /* Jarak dalam container */
+    box-sizing: border-box;
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;        /* Agar kotak turun ke baris baru */
+    gap: 10px;              /* Jarak antar kotak */
+    background-color: #fff; /* Latar belakang putih (sesuai screenshot) */
 }
 
-.box.small-grid .small {
-    flex: 1;
-    height: 50px;
-    background-color: white;
-    border: 1px solid #ccc;
+/* Kotak individual untuk nomor kamar */
+.kamar-box {
+    width: 120px;           /* Sesuaikan lebar kotak */
+    height: 80px;           /* Sesuaikan tinggi kotak */
+    background-color: #ccc; /* Warna abu-abu kotak */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999; 
     border-radius: 5px;
+}
+
+.kamar-box span {
+    color: #666;   /* Teks "nomor kamar" abu-abu */
+    font-size: 14px;
 }
