@@ -111,36 +111,36 @@
                 <div class="box-grid">
                     <!-- Isi foto kondisi kost berjejer -->
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Kondisi+1" alt="Kondisi 1">
+                        <img src="{{ asset('images/fasilK1.png') }}" alt="Kondisi 1">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Kondisi+2" alt="Kondisi 2">
+                        <img src="{{ asset('images/fasilK2.png') }}" alt="Kondisi 2">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Kondisi+3" alt="Kondisi 3">
+                        <img src="{{ asset('images/fasilK1.png') }}" alt="Kondisi 3">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Kondisi+4" alt="Kondisi 4">
+                        <img src="{{ asset('images/fasilK2.png') }}" alt="Kondisi 4">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Kondisi+5" alt="Kondisi 5">
+                        <img src="{{ asset('images/fasilK1.png') }}" alt="Kondisi 5">
                     </div>
                 </div>
             </div>
 
             <!-- 4. Fasilitas Kamar (1) -->
             <div class="section">
-                <h2>Fasilitas Kamar ></h2>
+                <h2>Fasilitas Kost ></h2>
                 <div class="box-grid">
                     <!-- Grid 3 kolom x 2 baris (misal) -->
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Fasilitas+1" alt="Fasilitas 1">
+                        <img src="{{ asset('images/fasilK1.png') }}" alt="Fasilitas 1">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Fasilitas+2" alt="Fasilitas 2">
+                        <img src="{{ asset('images/fasilK2.png') }}" alt="Fasilitas 2">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Fasilitas+3" alt="Fasilitas 3">
+                        <img src="{{ asset('images/fasilK1.png') }}" alt="Fasilitas 3">
                     </div>
                 </div>
             </div>
@@ -151,13 +151,13 @@
                 <div class="box-grid">
                     <!-- Grid 3 kolom x 2 baris (misal) -->
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Fasilitas+4" alt="Fasilitas 4">
+                        <img src="{{ asset('images/fasilK2.png') }}" alt="Fasilitas 4">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Fasilitas+5" alt="Fasilitas 5">
+                        <img src="{{ asset('images/fasilK2.png') }}" alt="Fasilitas 5">
                     </div>
                     <div class="box small">
-                        <img src="https://via.placeholder.com/150x100?text=Fasilitas+6" alt="Fasilitas 6">
+                        <img src="{{ asset('images/fasilK1.png') }}" alt="Fasilitas 6">
                     </div>
                 </div>
             </div>
