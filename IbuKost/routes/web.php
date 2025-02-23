@@ -39,3 +39,6 @@ Route::get('landing', function () {
     return view('landing');
 })->name('landing');
 
+Route::get('riwayat', function () {
+    return view('riwayat');
+})->name('riwayat');

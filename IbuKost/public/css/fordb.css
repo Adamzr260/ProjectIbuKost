@@ -1,4 +1,4 @@
-/* Reset dasar untuk menghilangkan margin dan padding bawaan */
+/* Reset dasar */
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +6,51 @@
     font-family: Arial, sans-serif;
 }
 
-/* Layout utama */
-.container {
-    display: flex;
-    height: 100vh;
+/* Layout utama (tanpa display:flex jika sidebar fixed) */
+html, body {
+    height: 100%;
 }
 
 /* Sidebar */
 .sidebar {
+    position: fixed;       /* agar sidebar tetap di sisi kiri */
+    top: 0;
+    left: 0;
     width: 250px;
+    height: 100%;          /* penuh tinggi layar */
     background-color: #C0AF9D;
     padding: 20px;
     color: white;
     display: flex;
     flex-direction: column;
+    /* jika ingin menambahkan scrolling sendiri di sidebar:
+       overflow-y: auto; 
+    */
 }
+
+/* Main content */
+.content {
+    /* beri margin kiri agar tidak tertutup sidebar */
+    margin-top: 100px;
+    margin-left: 250px;
+    min-height: 100vh;
+    background-color: #f8f5f0;
+    /* agar konten bisa di-scroll jika melebihi tinggi layar */
+    overflow-y: auto;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 250px); /* menyesuaikan lebar jika sidebar tetap 250px */
+    /* atau width: 100%; jika sidebar tidak menempel di atas */
+
+    z-index: 999; 
+    background-color: #f8f5f0; /* warna latar belakang sama dengan content */
+    padding: 20px;
+    /* gaya lain sesuai kebutuhan */
+}
+
 
 .logo {
     display: flex;
@@ -89,6 +119,62 @@ header h1 {
 }
 
 
+/* Popup user */
+.user-popup {
+    position: absolute;
+    top: 60px; /* Sesuaikan dengan layout header */
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    display: none; /* disembunyikan default */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 999;
+    width: 200px; /* Sesuaikan lebar popup */
+    text-align: center; /* Agar teks dan tombol terpusat */
+}
+
+.user-popup.show {
+    display: block;
+}
+
+.user-popup p {
+    margin-bottom: 15px;
+}
+
+/* Wrapper tombol */
+.popup-buttons {
+    display: flex;
+    justify-content: center; /* posisikan tombol di tengah */
+    gap: 10px; /* jarak antar tombol */
+}
+
+/* Tombol umum */
+.user-popup button {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff; /* Warna teks putih */
+}
+
+/* Tombol "Tidak" (bebas, misal abu-abu) */
+.btn-tidak {
+    background-color: #C0AF9D;
+}
+.btn-tidak:hover {
+    background-color: #7f746b;
+}
+
+/* Tombol "Ya" berwarna merah */
+.btn-ya {
+    background-color: #e74c3c;
+}
+.btn-ya:hover {
+    background-color: #903126;
+}
+
 /* .profile-icon {
     font-size: 24px;
 } */
@@ -150,4 +236,27 @@ header h1 {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.box.big {
+    padding: 20px;
+}
+
+.aturan-kost {
+    padding: 20px; /* Agar teks tidak mepet */
+}
+
+.aturan-kost p {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.aturan-kost ul {
+    margin-bottom: 15px;
+    padding-left: 20px; /* indentasi list */
+}
+
+.aturan-kost li {
+    margin-bottom: 5px;
+    font-weight: normal; /* Atur sesuai selera */
 }

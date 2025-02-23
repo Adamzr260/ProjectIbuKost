@@ -23,15 +23,28 @@
                     <li class="{{ request()->is('kamar') ? 'active' : '' }}">
                         <a href="{{ route('kamar') }}">Kamar</a>
                     </li>
+                    <li class="{{ request()->is('riwayat') ? 'active' : '' }}">
+                        <a href="{{ route('riwayat') }}">Riwayat Tagihan Tahunan</a>
+                    </li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Konten utama -->
         <main class="content">
-            <header>
+            <header class="main-header">
                 <h1>Selamat datang anak Kos!!</h1>
-                <i class='bx bx-user-circle'></i>
+                <!-- Ikon user -->
+                <i class='bx bx-user-circle' id="user-icon"></i>
+
+                <!-- Popup kecil -->
+                <div id="user-popup" class="user-popup">
+                    <p>Apakah anda ingin keluar?</p>
+                    <div class="popup-buttons">
+                        <button type="button" class="btn-tidak" onclick="closeUserPopup()">Tidak</button>
+                        <button type="button" class="btn-ya" onclick="goToLanding()"><a href="{{ route('landing') }}">Ya</a></button>
+                    </div>
+                </div>
             </header>
 
            <!-- Bagian Info -->
@@ -40,20 +53,57 @@
             <!-- 1. Tentang Kost -->
             <div class="section">
                 <h2>Tentang Kost ></h2>
-                <div class="box big">
-                    <!-- Gambar dummy / link palsu -->
-                    <img src="https://via.placeholder.com/600x200?text=Foto+Tentang+Kost" alt="Tentang Kost">
+                <div class="box big tentang-kost">
+                    <p><strong>Nama Kost:</strong> Kost Bu Tiara</p>
+                    <p><strong>Alamat:</strong> Jl. Melati No. 10, Jakarta</p>
+                    <p><strong>Pemilik:</strong> Bu Tiara</p>
+                    <p><strong>Jumlah Kamar:</strong> 20</p>
+                    <p><strong>Fasilitas:</strong> Wi-Fi, Dapur Bersama, Parkir Motor, CCTV, Air PAM, Listrik Prabayar</p>
+                    <p><strong>Harga Sewa:</strong> Rp1.500.000 - Rp2.500.000 per bulan</p>
                 </div>
             </div>
 
             <!-- 2. Aturan -->
             <div class="section">
                 <h2>Aturan ></h2>
-                <div class="box medium">
-                    <!-- Gambar dummy / link palsu -->
-                    <img src="https://via.placeholder.com/600x80?text=Foto+Aturan+Kost" alt="Aturan">
+                <div class="box medium aturan-kost">
+                    <p><strong>Peraturan Kost Bu Tiara 🏠</strong></p>
+                    <p><strong>1. Umum</strong></p>
+                    <ul>
+                        <li>✅ Kost ini khusus untuk pria/wanita/campur (sesuai kebijakan pemilik).</li>
+                        <li>✅ Maksimal 2 orang per kamar (jika berbagi kamar, dikenakan biaya tambahan).</li>
+                        <li>✅ Penghuni wajib membayar sewa tepat waktu (paling lambat tanggal 5 setiap bulan).</li>
+                        <li>✅ Tamu hanya boleh berkunjung sampai pukul 22.00 WIB.</li>
+                        <li>✅ Tidak diperbolehkan membawa hewan peliharaan ke dalam kost.</li>
+                    </ul>
+                    <p><strong>2. Keamanan &amp; Kenyamanan</strong></p>
+                    <ul>
+                        <li>🔒 Penghuni wajib menjaga keamanan dengan mengunci pintu saat keluar.</li>
+                        <li>🔒 Tidak diperbolehkan membawa, menyimpan, atau mengonsumsi alkohol &amp; narkoba.</li>
+                        <li>🔒 Dilarang membuat kegaduhan, seperti musik keras atau berteriak, terutama setelah pukul 22.00 WIB.</li>
+                        <li>🔒 Parkir hanya untuk penghuni kost, dan motor harus diparkir dengan rapi di area yang disediakan.</li>
+                    </ul>
+                    <p><strong>3. Kebersihan</strong></p>
+                    <ul>
+                        <li>🧹 Setiap penghuni wajib menjaga kebersihan kamar dan area bersama.</li>
+                        <li>🧹 Sampah harus dibuang ke tempat sampah yang disediakan.</li>
+                        <li>🧹 Tidak diperbolehkan memasak di dalam kamar (gunakan dapur bersama).</li>
+                    </ul>
+                    <p><strong>4. Fasilitas &amp; Kewajiban Penghuni</strong></p>
+                    <ul>
+                        <li>💡 Listrik menggunakan sistem prabayar/token (ditanggung masing-masing penghuni).</li>
+                        <li>💡 Penghuni harus bertanggung jawab atas barang pribadi masing-masing.</li>
+                        <li>💡 Kerusakan pada fasilitas yang disebabkan oleh penghuni harus diperbaiki atau diganti.</li>
+                    </ul>
+                    <p><strong>5. Sanksi &amp; Pelanggaran</strong></p>
+                    <ul>
+                        <li>⚠️ Peringatan pertama diberikan secara lisan.</li>
+                        <li>⚠️ Jika melanggar lebih dari 2 kali, penghuni bisa dikenakan denda atau dikeluarkan dari kost.</li>
+                        <li>⚠️ Pelanggaran berat seperti membawa narkoba, tindakan kriminal, atau merusak fasilitas dapat mengakibatkan pengusiran tanpa pengembalian uang sewa.</li>
+                    </ul>
                 </div>
             </div>
+
 
             <!-- 3. Kondisi Kost -->
             <div class="section">
@@ -115,5 +165,8 @@
         </section>
         </main>
     </div>
+
+        <!-- Memanggil file JavaScript terpisah -->
+        <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 </html>
