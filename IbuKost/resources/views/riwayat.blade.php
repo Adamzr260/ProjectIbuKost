@@ -46,6 +46,24 @@
                     </div>
                 </div>
             </header>
+
+                        <!-- Tabel Riwayat Tagihan Tahunan -->
+            <section class="riwayat-container">
+                <table class="riwayat-table">
+                    <thead>
+                        <tr>
+                            <th>Tahun</th>
+                            <th>Pendapatan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023</td>
+                            <td>100.000.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </main>
     </div>
         <!-- Memanggil file JavaScript terpisah -->

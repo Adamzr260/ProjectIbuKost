@@ -9,7 +9,7 @@
 /* Layout utama (tanpa display:flex jika sidebar fixed) */
 html, body {
     height: 100%;
-}
+}                                                                           
 
 /* Sidebar */
 .sidebar {
@@ -162,3 +162,45 @@ header h1 {
 .btn-ya:hover {
     background-color: #903126;
 }
+
+/* Container untuk tabel, jika ingin mengatur margin atau lebar */
+.riwayat-container {
+    margin-top: 20px;  /* jarak dari header */
+    padding: 0 20px;   /* padding kiri-kanan */
+}
+
+/* Tabel utama */
+.riwayat-table {
+    width: 100%;
+    border-collapse: collapse; /* hilangkan spasi ganda antar sel */
+    background-color: #D0C0AE; /* warna cokelat muda (silakan sesuaikan) */
+    /* Sesuai contoh, mungkin #D0C0AE atau #c9b8a3 */
+}
+
+/* Thead (judul kolom) */
+.riwayat-table thead th {
+    padding: 12px;
+    text-align: left;
+    border-right: 1px solid #000; /* garis pemisah antara kolom */
+    /* Jika mau meniru gambar, border bottom juga */
+    border-bottom: 1px solid #000;
+    /* Warna background bisa sama atau beda */
+}
+
+/* Th terakhir (Pendapatan) tanpa border-right jika diinginkan */
+.riwayat-table thead th:last-child {
+    border-right: none;
+}
+
+/* Tbody (isi data) */
+.riwayat-table tbody td {
+    padding: 12px;
+    border-right: 1px solid #000; 
+    border-top: 1px solid #000;   /* garis pemisah di atas data */
+}
+
+/* Td terakhir di baris, hilangkan border-right */
+.riwayat-table tbody td:last-child {
+    border-right: none;
+}
+
