@@ -70,9 +70,10 @@
             <h2>Form Kamar</h2>
             <p id="kamar-info">Kamar #</p>
 
-            <form>
+            <form id="kamar-form" action="{{ route('kamar.store') }}" method="POST">
+                @csrf
                 <label for="nama">Nama Penghuni</label>
-                <input type="text" id="nama" name="nama" placeholder="Masukkan nama...">
+                <input type="text" id="nama" name="nama_penghuni" placeholder="Masukkan nama...">
 
                 <label for="telp">No. Telp</label>
                 <input type="text" id="telp" name="telp" placeholder="Masukkan nomor telepon...">

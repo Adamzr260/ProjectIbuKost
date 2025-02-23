@@ -3,12 +3,15 @@
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\KamarController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::post('/kamar', [KamarController::class, 'store'])->name('kamar.store');
+
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/register', 'showRegister')->name('register');

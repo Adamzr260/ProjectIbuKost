@@ -19,23 +19,23 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         // validasi data
-        $this->validate($request, [
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|string'
-        ]);
+        try {
+            $this->validate($request, [
+                'name' => 'required|string',
+                'email' => 'required|email|unique:users,email',
+                'password' => 'required|string|confirmed'
+            ]);
 
-        // membuat data user
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->save();
 
-        // menyimpan data user
-        $user->save();
-
-        // mengembalikan data user dan token
-        return redirect()->route('login');
+            return redirect()->route('login')->with('success', 'Pendaftaran berhasil!');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 
     // fungsi untuk login
