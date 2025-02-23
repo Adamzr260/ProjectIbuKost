@@ -13,9 +13,10 @@ class KamarController extends Controller
         return view('kamar.index', compact('kamars'));
     }
 
+    // Fungsi untuk menyimpan data kamar
     public function store(Request $request)
     {
-        dd($request->all());
+        // Validasi data
         $request->validate([
             'nama_penghuni' => 'required|string|max:255',
             'no_telp' => 'required|string|max:15',
@@ -24,16 +25,16 @@ class KamarController extends Controller
             'tanggal_sewa' => 'required|date',
         ]);
 
-    
-        $kamar = new Kamar();
-        $kamar->nama_penghuni = $request->nama_penghuni;
-        $kamar->no_telp = $request->no_telp;
-        $kamar->tagihan = $request->tagihan;
-        $kamar->deskripsi = $request->deskripsi;
-        $kamar->tanggal_sewa = $request->tanggal_sewa;
-        $kamar->save();
-        
-        return redirect()->back()->with('success', 'Data kamar berhasil disimpan!');
+        // Simpan data kamar
+        Kamar::create($request->all());
+
+        // Redirect kembali ke halaman kamar
+        return redirect()->route('kamar')->with('success', 'Data kamar berhasil disimpan!');
+    }
+
+    // Fungsi untuk menampilkan halaman kamar
+    public function showKamar()
+    {
+        return view('kamar');
     }
 }
-

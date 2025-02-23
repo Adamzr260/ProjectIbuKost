@@ -10,7 +10,6 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::post('/kamar', [KamarController::class, 'store'])->name('kamar.store');
 
 
 Route::controller(AuthController::class)->group(function () {
@@ -33,10 +32,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::controller(KamarController::class)->group(function () {
+    Route::post('/kamar', 'store')->name('kamar.store');
+    Route::get('/kamar', 'showKamar')->name('kamar');
+});
 
-Route::get('/kamar', function () {
-    return view('kamar');
-})->name('kamar');
+// Route::get('/kamar', function () {
+//     return view('kamar');
+// })->name('kamar');
 
 Route::get('landing', function () {
     return view('landing');

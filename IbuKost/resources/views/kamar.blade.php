@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/forkmr.css') }}">
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
@@ -17,7 +19,7 @@
             </div>
             <nav>
                 <ul>
-                <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
+                    <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
                         <a href="{{ route('dashboard') }}">Beranda</a>
                     </li>
                     <li class="{{ request()->is('kamar') ? 'active' : '' }}">
@@ -57,26 +59,26 @@
                             <!-- Tulisan default "nomor kamar" -->
                             <span id="kamar-label-{{ $i - 1 }}">Kamar Kosong</span>
                         </div>
-                    @endfor
+                        @endfor
                 </div>
             </section>
         </main>
     </div>
 
- <!-- Popup Form -->
- <div id="popup-form" class="popup-form">
+    <!-- Popup Form -->
+    <div id="popup-form" class="popup-form">
         <div class="popup-content">
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <h2>Form Kamar</h2>
             <p id="kamar-info">Kamar #</p>
 
-            <form id="kamar-form" action="{{ route('kamar.store') }}" method="POST">
+            <form action="{{ route('kamar.store') }}" method="POST">
                 @csrf
-                <label for="nama">Nama Penghuni</label>
-                <input type="text" id="nama" name="nama_penghuni" placeholder="Masukkan nama...">
+                <label for="nama_penghuni">Nama Penghuni</label>
+                <input type="text" id="nama_penghuni" name="nama_penghuni" placeholder="Masukkan nama...">
 
-                <label for="telp">No. Telp</label>
-                <input type="text" id="telp" name="telp" placeholder="Masukkan nomor telepon...">
+                <label for="no_telp">No. Telp</label>
+                <input type="text" id="no_telp" name="no_telp" placeholder="Masukkan nomor telepon...">
 
                 <label for="tagihan">Tagihan</label>
                 <input type="text" id="tagihan" name="tagihan" placeholder="Masukkan nominal tagihan...">
@@ -84,14 +86,22 @@
                 <label for="deskripsi">Deskripsi Tagihan</label>
                 <textarea id="deskripsi" name="deskripsi" rows="3" placeholder="Tambahan keterangan..."></textarea>
 
-                <label for="tanggal-sewa">Tanggal Sewa</label>
-                <input type="date" id="tanggal-sewa" name="tanggal-sewa">
+                <label for="tanggal_sewa">Tanggal Sewa</label>
+                <input type="date" id="tanggal_sewa" name="tanggal_sewa">
 
                 <!-- Pesan error -->
-                <p id="form-error" class="error-message" style="display: none; color: red;"></p>
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
 
                 <!-- Tombol -->
-                <button type="submit" onclick="saveData(event)">Simpan</button>
+                <button type="submit">Simpan</button>
                 <button type="button" onclick="deleteData()">Hapus</button>
             </form>
         </div>
@@ -100,4 +110,5 @@
     <!-- Memanggil file JavaScript terpisah -->
     <script src="{{ asset('js/kamar.js') }}"></script>
 </body>
+
 </html>
