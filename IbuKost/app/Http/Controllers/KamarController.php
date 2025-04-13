@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Kamar;
 
 class KamarController extends Controller
@@ -36,5 +38,10 @@ class KamarController extends Controller
     public function showKamar()
     {
         return view('kamar');
+    }
+
+    public function showDashboard()
+    {
+        return view('dashboard');
     }
 }

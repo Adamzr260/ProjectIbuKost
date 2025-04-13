@@ -9,6 +9,7 @@
 /* Layout utama (tanpa display:flex jika sidebar fixed) */
 html, body {
     height: 100%;
+    background-color: #f8f5f0;
 }
 
 /* Sidebar */

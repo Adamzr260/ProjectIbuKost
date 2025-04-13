@@ -13,13 +13,7 @@
 
     <div class="landing-container">
         <!-- Header -->
-        <header>
-            <div class="logo">
-                <img src="{{ asset('images/logo.jpg') }}" alt="IbuKost Logo">
-               
-            </div>
-            <button class="btn-login" onclick="openPopup()">Masuk</button>
-        </header>
+        <x-header></x-header>
 
        <div>
         <h1>Mau Ngekost Di IbuKost?</h1>
@@ -58,26 +52,16 @@
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <h2>Masuk ke IbuKost</h2>
             <p>Saya ingin masuk sebagai</p>
-            <button class="role-btn" onclick="redirectToLogin()">Penyewa Kost</button>
-            <button class="role-btn" onclick="redirectToLogin()">Pemilik Kost</button>
+            <a href="{{ route('login') }}" style="text-decoration: none;">
+                <button class="role-btn">Penyewa Kost</button>
+            </a>
+            <a href="{{ route('login') }}" style="text-decoration: none;">
+                <button class="role-btn">Pemilik Kost</button>
+            </a>
         </div>
     </div>
 
-    <script>
-        function openPopup() {
-            document.getElementById("popup").style.display = "flex";
-        }
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-
-        function redirectToLogin() {
-            window.location.href = "{{ route('login') }}";
-        }
-    </script>
-
-
+    <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 
 </html>

@@ -11,29 +11,12 @@
 <body>
     <div class="container">
         <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="{{ asset('images/LOGO.jpg') }}" alt="IbuKost">
-            </div>
-            <nav>
-                <ul>
-                <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard') }}">Beranda</a>
-                    </li>
-                    <li class="{{ request()->is('kamar') ? 'active' : '' }}">
-                        <a href="{{ route('kamar') }}">Kamar</a>
-                    </li>
-                    <li class="{{ request()->is('riwayat') ? 'active' : '' }}">
-                        <a href="{{ route('riwayat') }}">Riwayat Tagihan Tahunan</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+        <x-sidebar></x-sidebar>
 
         <!-- Konten utama -->
         <main class="content">
             <header>
-                <h1>Selamat datang anak Kos!!</h1>
+                <h1>Selamat Datang {{ $user?->name ?? 'Anak Kos' }}</h1>
                 <!-- Ikon user -->
                 <i class='bx bx-user-circle' id="user-icon"></i>
 

@@ -43,12 +43,12 @@ class AuthController extends Controller
     {
         // validasi data
         $this->validate($request, [
-            'email' => 'required|email',
+            'name' => 'required|string',
             'password' => 'required|string'
         ]);
 
         // cek data user
-        if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (!Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
             return response()->json([
                 'message' => 'Unauthorized'
             ], 401);
@@ -57,7 +57,9 @@ class AuthController extends Controller
         // mengambil data user
         $user = $request->user();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard', [
+            'user' => $user
+        ]);
     }
 
     // fungsi untuk logout
@@ -72,10 +74,10 @@ class AuthController extends Controller
     // fungsi untuk me-return data user yang sedang login
     public function userLogin(Request $request)
     {
-        // mengambil data user yang sedang login
         $user = $request->user();
-
-        return compact('user');
+        return view('dashboard', [
+            'user' => $user
+        ]);
     }
 
     // fungsi untuk menampilkan view login
@@ -88,5 +90,10 @@ class AuthController extends Controller
     public function showRegister()
     {
         return view('register');
+    }
+
+    public function redirectToLogin()
+    {
+        return redirect()->route('login');
     }
 }

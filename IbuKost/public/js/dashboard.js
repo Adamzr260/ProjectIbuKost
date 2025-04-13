@@ -22,3 +22,15 @@ function closeUserPopup() {
 function goToLanding() {
     window.location.href = "{{ route('landing') }}";
 }
+
+function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+function redirectToLogin() {
+    window.location.href = "{{ route('login') }}";
+}

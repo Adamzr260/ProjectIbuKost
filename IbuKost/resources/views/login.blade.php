@@ -16,10 +16,10 @@
         </div>
 
         <div class="login-box">
-            <form action="{{ route('dashboard') }}" method="GET">
+            <form action="{{ route('login.post') }}" method="POST">
                 @csrf
                 <div class="input-group">
-                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="text" name="name" placeholder="Username" required>
                 </div>
                 <div class="input-group">
                     <input type="password" name="password" placeholder="Password" required>

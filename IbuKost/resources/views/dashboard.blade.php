@@ -10,30 +10,12 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="{{ asset('images/LOGO.jpg') }}" alt="IbuKost">
-            </div>
-            <nav>
-                <ul>
-                    <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
-                        <a href="{{ route('dashboard') }}">Beranda</a>
-                    </li>
-                    <li class="{{ request()->is('kamar') ? 'active' : '' }}">
-                        <a href="{{ route('kamar') }}">Kamar</a>
-                    </li>
-                    <li class="{{ request()->is('riwayat') ? 'active' : '' }}">
-                        <a href="{{ route('riwayat') }}">Riwayat Tagihan Tahunan</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+        <x-sidebar></x-sidebar>
 
         <!-- Konten utama -->
-        <main class="content">
+        <main class="content" style="overflow: auto;">
             <header class="main-header">
-                <h1>Selamat datang anak Kos!!</h1>
+                <h1>Selamat Datang {{ $user?->name ?? 'Anak Kos' }}</h1>
                 <!-- Ikon user -->
                 <i class='bx bx-user-circle' id="user-icon"></i>
 
@@ -111,10 +93,10 @@
                 <div class="box-grid">
                     <!-- Isi foto kondisi kost berjejer -->
                     <div class="box small">
-                        <img src="{{ asset('images/fasilK1.png') }}" alt="Kondisi 1">
+                        <img src="{{ asset('images/Kos-1.jpeg')}}" alt="Kondisi 1">
                     </div>
                     <div class="box small">
-                        <img src="{{ asset('images/fasilK2.png') }}" alt="Kondisi 2">
+                        <img src="{{ asset('images/Kamar-kost-minimalis-1.jpg')}}" alt="Kondisi 2">
                     </div>
                     <div class="box small">
                         <img src="{{ asset('images/fasilK1.png') }}" alt="Kondisi 3">
@@ -141,6 +123,13 @@
                     </div>
                     <div class="box small">
                         <img src="{{ asset('images/fasilK1.png') }}" alt="Fasilitas 3">
+                        <img src="{{ asset('images/Kamar-4.webp')}}" alt="Fasilitas 1">
+                    </div>
+                    <div class="box small">
+                        <img src="{{ asset('images/kamar-1.webp')}}" alt="Fasilitas 2">
+                    </div>
+                    <div class="box small">
+                        <img src="{{ asset('images/Kamar-Kost-Estetik.jpg')}}" alt="Fasilitas 3">
                     </div>
                 </div>
             </div>
@@ -158,6 +147,13 @@
                     </div>
                     <div class="box small">
                         <img src="{{ asset('images/fasilK1.png') }}" alt="Fasilitas 6">
+                        <img src="{{ asset('images/kamar-mandi.jpg')}}" alt="Fasilitas 4">
+                    </div>
+                    <div class="box small">
+                        <img src="{{ asset('images/jemuran-kost.jpg')}}" alt="Fasilitas 5">
+                    </div>
+                    <div class="box small">
+                        <img src="{{ asset('images/Tempat-Parkir-Motor.jpg')}}" alt="Fasilitas 6">
                     </div>
                 </div>
             </div>
